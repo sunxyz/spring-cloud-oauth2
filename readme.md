@@ -51,7 +51,7 @@ create table oauth_refresh_token (
   authentication BLOB
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 ```
-### setup1 登录授权 获取 token 
+### step1 登录授权 获取 token 
 
 为了方便测试 此次采用密码模式 4中模式的详解可以参考 [理解OAuth 2.0](http://www.ruanyifeng.com/blog/2014/05/oauth_2_0.html)
 
@@ -82,7 +82,7 @@ Pragma: no-cache
     "scope": "user_info"
 }
 ```
-### setup2 请求资源 携带认证信息
+### step2 请求资源 携带认证信息
 
 ```
 GET http://localhost:8080/api/account HTTP/1.1
@@ -100,7 +100,7 @@ Pragma: no-cache
 hello account service
 ```
 
-### setup3 注销 
+### step3 注销 
 
 access_token 值为 上一步获取到的 access_token 值
 Authorization 值为 应用的client_id与secret的加密
