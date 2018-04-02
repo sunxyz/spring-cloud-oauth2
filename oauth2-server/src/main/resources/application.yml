@@ -1,0 +1,25 @@
+info:
+  version: @project.version@
+  description: 认证服务
+
+spring:
+  application:
+    name: oauth2-service
+  thymeleaf:
+    mode: LEGACYHTML5
+
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/spring-cloud-demo?useUnicode=yes&characterEncoding=UTF-8
+    username: root
+    password: 123456
+
+
+
+#security:
+#  oauth2:
+#    resource:
+#      filter-order: 3
+server:
+  port: 8090
+

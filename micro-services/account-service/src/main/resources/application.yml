@@ -1,0 +1,22 @@
+info:
+  version: @project.version@
+  description: 账号服务
+
+spring:
+  application:
+    name: account-service
+
+management:
+  security:
+    enabled: false
+
+logging:
+  file: /tmp/${spring.application.name}.log
+
+endpoints:
+  logfile:
+    enabled: true
+
+server:
+  port: 9010
+

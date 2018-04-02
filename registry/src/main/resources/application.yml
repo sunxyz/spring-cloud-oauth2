@@ -1,0 +1,32 @@
+info:
+  version: @project.version@
+  description: 注册中心
+
+spring:
+  application:
+    name: registry-server
+  boot:
+    admin:
+      context-path: /admin
+      discovery:
+        enabled: false
+      turbine:
+        clusters: default
+        url: http://localhost:8761/turbine.stream
+
+server:
+  port: 8761
+
+security:
+  user:
+    name: eureka
+    password: eureka!!!123
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/

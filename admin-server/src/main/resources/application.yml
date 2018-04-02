@@ -1,0 +1,27 @@
+info:
+  version: @project.version@
+  description: admin
+
+spring:
+  application:
+    name: admin-server
+  boot:
+    admin:
+      context-path: /admin
+#    turbine:
+#      clusters: default
+#      url: http://localhost:9000/turbine.stream
+
+server:
+  port: 9000
+
+logging:
+  file: /tmp/${spring.application.name}.log
+
+endpoints:
+  logfile:
+    enabled: true
+
+management:
+  security:
+    enabled: false

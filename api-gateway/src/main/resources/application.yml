@@ -1,0 +1,36 @@
+info:
+  version: @project.version@
+  description: 网关服务
+
+spring:
+  application:
+    name: gateway-service
+  profiles:
+    active: dev
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/spring-cloud-demo?useUnicode=yes&characterEncoding=UTF-8
+    username: root
+    password: 123456
+
+management:
+  security:
+    enabled: false
+
+logging:
+  file: /tmp/${spring.application.name}.log
+
+endpoints:
+  logfile:
+    enabled: true
+
+server:
+  port: 8080
+
+
+security:
+  oauth2:
+    resource:
+      id: gateway-service
+#      user-info-uri: http://localhost:9090/user
+#      prefer-token-info: false

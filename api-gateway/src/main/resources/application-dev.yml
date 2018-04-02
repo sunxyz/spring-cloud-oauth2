@@ -1,0 +1,9 @@
+zuul:
+  add-host-header: true
+  ignored-services: '*'
+  prefix: /api
+  routes:
+    account-service:
+      path: /account/**
+      strip-prefix: false
+      service-id: account-service
